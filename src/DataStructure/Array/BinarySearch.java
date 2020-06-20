@@ -1,4 +1,4 @@
-package Array;
+package DataStructure.Array;
 
 /**
  * 二分查找
