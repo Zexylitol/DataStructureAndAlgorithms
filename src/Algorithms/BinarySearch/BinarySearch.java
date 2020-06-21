@@ -1,15 +1,14 @@
-package DataStructure.Array;
+package Algorithms.BinarySearch;
 
 /**
  * 二分查找
  * Although the basic idea of binary search is comparatively straightforward,
  * the details can be surprisingly tricky...
  * 思路很简单，细节是魔鬼
- *
  * @author yzz
+ * @create 2020-06-21 18:38
  */
 public class BinarySearch {
-
     /**
      * 寻找一个数
      *
@@ -95,5 +94,4 @@ public class BinarySearch {
         int result3 = bs.right_bound(test, 2);
         System.out.println(result1 + " " + result2 + " " + result3);
     }
-
 }

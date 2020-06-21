@@ -1,6 +1,6 @@
 package DataStructure.BinaryTree;
 
-import DataStructure.Queue.LoopQueueByArray;
+import DataStructure.Queue.ArrayLoopQueue;
 
 /**
  * 利用队列实现二叉树的广度优先搜索(BFS)
@@ -20,7 +20,7 @@ public class BreadthFirstSearch {
 		}
 		
 		// 创建循环队列
-		LoopQueueByArray<BSTNode> lq = new LoopQueueByArray<BSTNode>(7);
+		ArrayLoopQueue<BSTNode> lq = new ArrayLoopQueue<BSTNode>(7);
 		
 		lq.enQueue(root_);
 		

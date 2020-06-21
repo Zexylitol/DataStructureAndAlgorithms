@@ -7,7 +7,7 @@ import DataStructure.NewBinaryTree.AVL.AVLTree;
  * @author yzze
  * @create 2020-05-16 12:08
  */
-public class AVLSet<E extends Comparable<E>> implements Set<E> {
+public class  AVLSet<E extends Comparable<E>> implements Set<E> {
     private AVLTree<E, Object> avl;
 
     public AVLSet() {

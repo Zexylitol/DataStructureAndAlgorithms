@@ -32,7 +32,7 @@ public class Compare {
         double time1 = testQueue(arrayQueue, opCount);
         System.out.println("QueueByArray, time: "+ time1 + " s");
 
-        LoopQueueByArray<Integer> loopQueue = new LoopQueueByArray<>();
+        ArrayLoopQueue<Integer> loopQueue = new ArrayLoopQueue<>();
         double time2 = testQueue(loopQueue, opCount);
         System.out.println("LoopQueueByArray, time: "+ time2 + " s");
 

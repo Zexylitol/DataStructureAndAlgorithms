@@ -12,19 +12,20 @@ package DataStructure.Queue;
  *  数据结构从入门到进阶-课程章节
  *  https://coding.imooc.com/class/chapter/207.html#Anchor
  */
-public class LoopQueueByArray<E> implements iQueue<E> {
+public class ArrayLoopQueue<E> implements iQueue<E> {
 	private E[] data;
 	private int front, tail;
-	// 这里为了简单我们直接将size定义出来进行维护，其实可以使用front和tail进行维护，但是这里有resize操作可能没这么简单
+	// 这里为了简单我们直接将size定义出来进行维护，其实可以使用front和tail进行维护，
+	// 但是这里有resize操作可能没这么简单
 	private int size;
-	public LoopQueueByArray(int capacity) {
+	public ArrayLoopQueue(int capacity) {
 		data = (E[]) new Object[capacity + 1] ; // 在实现循环队列的时候我们需要浪费掉一个空间
 		front = 0;
 		tail = 0;
 		size = 0;
 	}
 	
-	public LoopQueueByArray() {
+	public ArrayLoopQueue() {
 		//data = (E[]) new Object[10 + 1];
 		this(10);
 	}
@@ -42,10 +43,14 @@ public class LoopQueueByArray<E> implements iQueue<E> {
 	public boolean isEmpty() {
 		return front == tail;
 	}
-	
+
+	/**
+	 * O(1)
+	 * @param e
+	 */
 	@Override
 	public void enQueue(E e) {
-		if ((tail + 1) % data.length == front) {
+		if ((tail + 1) % data.length == front) {    // 队列满，扩容
 			resize(getCapacity() * 2);
 		}
 		data[tail] = e;
@@ -110,7 +115,7 @@ public class LoopQueueByArray<E> implements iQueue<E> {
 		return res.toString();
 	}
 	public static void main(String[] args) {
-		LoopQueueByArray<Integer> queue = new LoopQueueByArray<>();
+		ArrayLoopQueue<Integer> queue = new ArrayLoopQueue<>();
 		for (int i = 0; i < 10; i++) {
 			queue.enQueue(i);
 			System.out.println(queue);
