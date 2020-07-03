@@ -1,6 +1,6 @@
-package Algorithms.Graph;
+package Algorithms.Graph.UndirectedGraph;
 
-import DataStructure.Graph.UndirectedGraph.AdjListUndirGraph;
+import DataStructure.Graph.UndirectedGraph.UndiGraph;
 
 /**
  * 使用深度优先搜索解决双色问题
@@ -14,7 +14,7 @@ public class TwoColor {
     private boolean[] color;
     private boolean isTwoColorable = true;
 
-    public TwoColor(AdjListUndirGraph G) {
+    public TwoColor(UndiGraph G) {
         marked = new boolean[G.V()];
         color = new boolean[G.V()];
         for (int s = 0; s < G.V(); s++) {
@@ -24,7 +24,7 @@ public class TwoColor {
         }
     }
 
-    private void dfs(AdjListUndirGraph G, int v) {
+    private void dfs(UndiGraph G, int v) {
         marked[v] = true;
         for (int w : G.adj(v)) {
             if (!marked[w]) {

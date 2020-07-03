@@ -8,7 +8,7 @@ import java.util.Scanner;
  * @author yzz
  * @create 2020-06-28 20:47
  */
-public class AdjListUndirGraph {
+public class UndiGraph {
 
     private class LinkedList<E> implements Iterable<E> {
 
@@ -56,7 +56,7 @@ public class AdjListUndirGraph {
     private int E;                      // 边的数目
     private LinkedList<Integer>[] adj;  // 邻接表
 
-    public AdjListUndirGraph(int V) {
+    public UndiGraph(int V) {
         this.V = V;
         this.E = 0;
         adj = (LinkedList<Integer>[]) new LinkedList[V];   // 创建邻接表
@@ -64,7 +64,7 @@ public class AdjListUndirGraph {
             adj[v] = new LinkedList<Integer>();     // 将所有链表初始化为空
         }
     }
-    public AdjListUndirGraph(Scanner sc) {
+    public UndiGraph(Scanner sc) {
 
         this(sc.nextInt());         // 读取V并将图初始化
         int e = sc.nextInt();       // 读取E
@@ -116,7 +116,7 @@ public class AdjListUndirGraph {
      * @param G
      * @return
      */
-    public static int numOfSelfLoops(AdjListUndirGraph G) {
+    public static int numOfSelfLoops(UndiGraph G) {
         int count = 0;
         for (int v = 0; v < G.V(); v++) {
             for (int w : G.adj(v)) {
@@ -134,7 +134,7 @@ public class AdjListUndirGraph {
      * @param v
      * @return
      */
-    public static int degree(AdjListUndirGraph G, int v) {
+    public static int degree(UndiGraph G, int v) {
         int degree = 0;
         for (int w : G.adj(v)) {
             degree ++;
@@ -147,7 +147,7 @@ public class AdjListUndirGraph {
      * @param G
      * @return
      */
-    public static int maxDegree(AdjListUndirGraph G) {
+    public static int maxDegree(UndiGraph G) {
         int max = 0;
         for (int v = 0; v < G.V(); v++) {
             if (degree(G, v) > max) {
@@ -162,7 +162,7 @@ public class AdjListUndirGraph {
      * @param G
      * @return
      */
-    public static double avgDegree(AdjListUndirGraph G) {
+    public static double avgDegree(UndiGraph G) {
         return 2 * G.V() / G.V();
     }
 
@@ -201,7 +201,7 @@ public class AdjListUndirGraph {
          * 12: 11 9
          */
         Scanner sc = new Scanner(System.in);
-        AdjListUndirGraph graph = new AdjListUndirGraph(sc);
+        UndiGraph graph = new UndiGraph(sc);
         System.out.println(graph.toString());
     }
 

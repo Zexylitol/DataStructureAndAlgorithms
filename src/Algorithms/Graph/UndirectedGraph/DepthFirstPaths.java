@@ -1,6 +1,6 @@
-package Algorithms.Graph;
+package Algorithms.Graph.UndirectedGraph;
 
-import DataStructure.Graph.UndirectedGraph.AdjListUndirGraph;
+import DataStructure.Graph.UndirectedGraph.UndiGraph;
 
 import java.util.List;
 import java.util.Scanner;
@@ -16,14 +16,14 @@ public class DepthFirstPaths {
     private int[] edgeTo;        // 从起点到一个顶点的已知路径上的最后一个顶点
     private final int s;         // 起点
 
-    public DepthFirstPaths(AdjListUndirGraph G, int s) {
+    public DepthFirstPaths(UndiGraph G, int s) {
         marked = new boolean[G.V()];
         edgeTo = new int[G.V()];
         this.s = s;
         dfs(G, s);
     }
 
-    private void dfs(AdjListUndirGraph G, int v) {
+    private void dfs(UndiGraph G, int v) {
         marked[v] = true;
         for (int w : G.adj(v)) {
             if (!marked[w]) {
@@ -78,7 +78,7 @@ public class DepthFirstPaths {
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        AdjListUndirGraph graph = new AdjListUndirGraph(sc);
+        UndiGraph graph = new UndiGraph(sc);
         int s = 0;
 
         DepthFirstPaths dfp = new DepthFirstPaths(graph, s);

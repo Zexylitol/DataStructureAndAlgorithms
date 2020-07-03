@@ -1,7 +1,7 @@
-package Algorithms.Graph;
+package Algorithms.Graph.UndirectedGraph;
 
-import DataStructure.Graph.UndirectedGraph.AdjListUndirGraph;
 import DataStructure.Graph.UndirectedGraph.SymbolGraph;
+import DataStructure.Graph.UndirectedGraph.UndiGraph;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -28,8 +28,9 @@ public class DegreesOfSeparation {
         }
         SymbolGraph sg = new SymbolGraph(list, " ");
 
-        AdjListUndirGraph G = sg.Graph();
+        UndiGraph G = sg.Graph();
 
+        // 查找顶点"JFK"和"DEN"之间的最短路径
         String source = "JFK";
         if (!sg.contains(source)) {
             System.out.println(source + "not in database");

@@ -1,6 +1,6 @@
-package Algorithms.Graph;
+package Algorithms.Graph.UndirectedGraph;
 
-import DataStructure.Graph.UndirectedGraph.AdjListUndirGraph;
+import DataStructure.Graph.UndirectedGraph.UndiGraph;
 
 import java.util.Scanner;
 
@@ -16,12 +16,12 @@ public class DepthFirstSearch {
     private boolean[] marked;
     private int count;
 
-    public DepthFirstSearch(AdjListUndirGraph G, int s) {
+    public DepthFirstSearch(UndiGraph G, int s) {
         marked = new boolean[G.V()];
         dfs(G, s);
     }
 
-    private void dfs(AdjListUndirGraph G, int v) {
+    private void dfs(UndiGraph G, int v) {
         marked[v] = true;
         count++;
         for (int w : G.adj(v)) {
@@ -72,7 +72,7 @@ public class DepthFirstSearch {
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        AdjListUndirGraph graph = new AdjListUndirGraph(sc);
+        UndiGraph graph = new UndiGraph(sc);
         int s = 0;
 
         DepthFirstSearch DFS = new DepthFirstSearch(graph, s);

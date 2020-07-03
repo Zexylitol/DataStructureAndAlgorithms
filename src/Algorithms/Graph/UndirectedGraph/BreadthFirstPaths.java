@@ -1,6 +1,6 @@
-package Algorithms.Graph;
+package Algorithms.Graph.UndirectedGraph;
 
-import DataStructure.Graph.UndirectedGraph.AdjListUndirGraph;
+import DataStructure.Graph.UndirectedGraph.UndiGraph;
 
 import java.util.*;
 
@@ -15,14 +15,14 @@ public class BreadthFirstPaths {
     private int[] edgeTo;           // 到达该顶点的已知路径上的最后一个顶点
     private final int s;            // 起点
 
-    public BreadthFirstPaths(AdjListUndirGraph G, int s) {
+    public BreadthFirstPaths(UndiGraph G, int s) {
         marked = new boolean[G.V()];
         edgeTo = new int[G.V()];
         this.s = s;
         bfs(G, s);
     }
 
-    private void bfs(AdjListUndirGraph G, int s) {
+    private void bfs(UndiGraph G, int s) {
         Queue<Integer> queue = new LinkedList<>();
         marked[s] = true;             // 标记起点
         queue.offer(s);               // 加入队列
@@ -88,7 +88,7 @@ public class BreadthFirstPaths {
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        AdjListUndirGraph graph = new AdjListUndirGraph(sc);
+        UndiGraph graph = new UndiGraph(sc);
         int s = 0;
 
         BreadthFirstPaths bfp = new BreadthFirstPaths(graph,s);

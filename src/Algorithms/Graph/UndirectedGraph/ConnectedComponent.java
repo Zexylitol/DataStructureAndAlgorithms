@@ -1,6 +1,6 @@
-package Algorithms.Graph;
+package Algorithms.Graph.UndirectedGraph;
 
-import DataStructure.Graph.UndirectedGraph.AdjListUndirGraph;
+import DataStructure.Graph.UndirectedGraph.UndiGraph;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -16,7 +16,7 @@ public class ConnectedComponent {
     private int[] id;                 // 如果v属于第i个连通分量，则id[v]的值为i
     private int count;
 
-    public ConnectedComponent(AdjListUndirGraph G) {
+    public ConnectedComponent(UndiGraph G) {
         marked = new boolean[G.V()];
         id = new int[G.V()];
         for (int s = 0; s < G.V(); s++) {
@@ -26,7 +26,7 @@ public class ConnectedComponent {
             }
         }
     }
-    private void dfs(AdjListUndirGraph G, int v) {
+    private void dfs(UndiGraph G, int v) {
         marked[v] = true;
         id[v] = count;
         for(int w : G.adj(v)) {
@@ -91,7 +91,7 @@ public class ConnectedComponent {
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        AdjListUndirGraph G = new AdjListUndirGraph(sc);
+        UndiGraph G = new UndiGraph(sc);
 
         ConnectedComponent cc = new ConnectedComponent(G);
 

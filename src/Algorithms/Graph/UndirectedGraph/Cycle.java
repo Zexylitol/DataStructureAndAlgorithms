@@ -1,6 +1,6 @@
-package Algorithms.Graph;
+package Algorithms.Graph.UndirectedGraph;
 
-import DataStructure.Graph.UndirectedGraph.AdjListUndirGraph;
+import DataStructure.Graph.UndirectedGraph.UndiGraph;
 
 /**
  * 使用深度优先搜索检验G是否是无环图(假设不存在自环或平行边)
@@ -10,7 +10,7 @@ import DataStructure.Graph.UndirectedGraph.AdjListUndirGraph;
 public class Cycle {
     private boolean[] marked;
     private boolean hasCycle;
-    public Cycle(AdjListUndirGraph G) {
+    public Cycle(UndiGraph G) {
         marked = new boolean[G.V()];
         for (int s = 0; s < G.V(); s++) {
             if (!marked[s]) {
@@ -19,7 +19,7 @@ public class Cycle {
         }
     }
 
-    private void dfs(AdjListUndirGraph G, int v, int u) {
+    private void dfs(UndiGraph G, int v, int u) {
         marked[v] = true;
         for (int w : G.adj(v)) {
             if (!marked[w]) {

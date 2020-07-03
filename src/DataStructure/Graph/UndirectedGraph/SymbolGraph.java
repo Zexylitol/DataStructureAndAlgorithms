@@ -13,7 +13,7 @@ import java.util.TreeMap;
 public class SymbolGraph {
     private TreeMap<String, Integer> map;     // 符号名/顶点名 -> 索引
     private String[] keys;                    // 索引 -> 符号名
-    private AdjListUndirGraph G;              // 使用索引表示顶点的图
+    private UndiGraph G;              // 使用索引表示顶点的图
 
     /**
      * 根据指定的文件构造图
@@ -38,7 +38,7 @@ public class SymbolGraph {
             keys[map.get(name)] = name;
         }
 
-        G = new AdjListUndirGraph(map.size());
+        G = new UndiGraph(map.size());
         for (String line : list) {              // 第二遍 构造图
             String[] a = line.split(sp);        // 将每一行的顶点和该行的其他顶点相连
 
@@ -80,7 +80,7 @@ public class SymbolGraph {
      * 隐藏的AdjListUndirGraph对象
      * @return
      */
-    public AdjListUndirGraph Graph() {
+    public UndiGraph Graph() {
         return G;
     }
 
@@ -150,7 +150,7 @@ public class SymbolGraph {
         }
 
         SymbolGraph sg = new SymbolGraph(list, " ");
-        AdjListUndirGraph G = sg.Graph();
+        UndiGraph G = sg.Graph();
 
         for (int s = 0; s < G.V(); s++) {
             System.out.println(sg.name(s));
