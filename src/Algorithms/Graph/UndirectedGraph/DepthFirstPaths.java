@@ -61,19 +61,24 @@ public class DepthFirstPaths {
 
     /**
      * In:
-     * 6
-     * 8
-     * 0 5
-     * 2 4
-     * 2 3
-     * 1 2
-     * 0 1
-     * 3 4
-     * 3 5
-     * 0 2
+        6
+        8
+        0 5
+        2 4
+        2 3
+        1 2
+        0 1
+        3 4
+        3 5
+        0 2
      *
      * Out:
-     *
+        0 to 0: 0
+        0 to 1: 0-2-1
+        0 to 2: 0-2
+        0 to 3: 0-2-3
+        0 to 4: 0-2-3-4
+        0 to 5: 0-2-3-5
      * @param args
      */
     public static void main(String[] args) {
