@@ -11,9 +11,9 @@ import java.util.TreeMap;
  * @create 2020-07-03 16:01
  */
 public class SymbolGraph {
-    private TreeMap<String, Integer> map;     // 符号名 -> 索引
+    private TreeMap<String, Integer> map;     // 符号名/顶点名 -> 索引
     private String[] keys;                    // 索引 -> 符号名
-    private AdjListUndirGraph G;              // 图
+    private AdjListUndirGraph G;              // 使用索引表示顶点的图
 
     /**
      * 根据指定的文件构造图
