@@ -1,4 +1,6 @@
-package DataStructure.Graph.UndirectedGraph;
+package Algorithms.Graph;
+
+import DataStructure.Graph.UndirectedGraph.AdjListUndirGraph;
 
 import java.util.Scanner;
 
