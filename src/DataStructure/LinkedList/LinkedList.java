@@ -180,7 +180,7 @@ public class LinkedList<E> {
         for(int i = 0; i < index; i++) {
             prev = prev.next;
         }
-        Node retNode = prev.next;
+        Node retNode = prev.next;           // 待删除节点
         prev.next = retNode.next;
         retNode.next = null;
         size--;
