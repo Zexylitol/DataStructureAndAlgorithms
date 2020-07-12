@@ -33,7 +33,7 @@ public class MergeSort {
 		
 		System.out.print("左： ");
 		for(int a = 0; a < mid; a++) {
-			System.out.print(leftArray.get(a) + " ");
+			System.out.print(leftArray.get(a) + " " + a + " ");
 		}
 		System.out.print("右： ");
 		for(int a = 0; a < mid; a++) {
@@ -79,7 +79,7 @@ public class MergeSort {
 		
 		MergeSort ms = new MergeSort();
 		
-		Array<Integer> arr = new Array<Integer>(8);
+		Array<Integer> arr = new Array<Integer>(7);
 		arr.addFirst(8);
 		arr.addFirst(1);
 		arr.addFirst(4);
