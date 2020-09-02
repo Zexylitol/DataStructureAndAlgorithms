@@ -10,6 +10,7 @@ import java.util.TreeMap;
 public class Trie {
     private class Node {
         public boolean isWord;
+
         public TreeMap<Character, Node> next;
 
         public Node(boolean isWord) {
