@@ -14,12 +14,13 @@ import java.util.Stack;
 public class PolandNotation {
 
     public static void main(String[] args) {
+        PolandNotation polandNotation = new PolandNotation();
         //4*5-8+60+8/2
         String expression = "4 5 * 8 - 60 + 8 2 / +";
-        List<String> list = getStrList(expression);
+        List<String> list = polandNotation.getStrList(expression);
         System.out.println(list);
         //计算值，得结果
-        int res = calc(list);
+        int res = polandNotation.calc(list);
         System.out.println(res);
     }
 
@@ -28,7 +29,7 @@ public class PolandNotation {
      * @param exp 表达式
      * @return
      */
-    public static List<String> getStrList(String exp){
+    public List<String> getStrList(String exp){
         String arr[] = exp.split(" ");   //将字符串遍历得到数组
         List<String> list = new ArrayList<>();
         for(String str : arr){
@@ -38,7 +39,7 @@ public class PolandNotation {
     }
 
     //计算表达式
-    public static int calc(List<String> list ){
+    public int calc(List<String> list ){
         //创建存放字符串的栈
         Stack<String> stack = new Stack<>();
         //遍历list
