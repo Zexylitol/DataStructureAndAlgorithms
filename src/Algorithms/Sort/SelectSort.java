@@ -1,22 +1,29 @@
 package Algorithms.Sort;
 
-import DataStructure.Array.Array;
-
 /**
  * 选择排序
+ *
+ *  平均时间  最差情形  稳定度  额外空间  备注
+ *  O(n^2)   O(n^2)  不稳定  O(1)    n小时较好
+ *
  * @author yzz
  *
  */
 public class SelectSort {
 	
-	public void selectSort(Array<Integer> array) {
-		for (int i = 0; i < array.getSize() - 1; i++) {
-			for (int j = i + 1; j < array.getSize(); j++) {
-				if (array.get(i) > array.get(j)) {
-					int tmp = array.get(i);
-					array.set(i, array.get(j));
-					array.set(j, tmp);
+	public void selectSort(int[] arr) {
+		for (int i = 0; i < arr.length - 1;i++ ) {
+			int minIndex = i;
+			int min = arr[i];
+			for (int j = i + 1; j < arr.length; j++) {
+				if (min > arr[j]) {
+					min = arr[j];
+					minIndex = j;
 				}
+			}
+			if (minIndex != i) {
+				arr[minIndex] = arr[i];
+				arr[i] = min;
 			}
 		}
 	}
@@ -25,20 +32,20 @@ public class SelectSort {
 		// TODO Auto-generated method stub
 		
 		SelectSort ss = new SelectSort();
+
+		int[] arr = new int[]{101,34,119,1,-1,90,123};
+
 		
-		Array<Integer> arr = new Array<Integer>(8);
-		arr.addFirst(8);
-		arr.addFirst(1);
-		arr.addFirst(4);
-		arr.addFirst(6);
-		arr.addFirst(2);
-		arr.addFirst(3);
-		arr.addFirst(5);
-		arr.addFirst(7);
-		
-		System.out.println("排序前： " + arr.toString());
+		System.out.println("排序前： ");
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		}
+		System.out.println();
 		ss.selectSort(arr);
-		System.out.println("排序后： " + arr.toString());
+		System.out.println("排序后： ");
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		}
 	}
 
 }

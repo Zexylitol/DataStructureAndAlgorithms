@@ -5,6 +5,10 @@ import DataStructure.Array.Array;
 
 /**
  * 冒泡排序
+ *
+ *  平均时间  最差情形  稳定度  额外空间  备注
+ *  O(n^2)   O(n^2)  稳定   O(1)     n小时较好
+ *
  * @author yzz
  *
  * 2019/08/17
