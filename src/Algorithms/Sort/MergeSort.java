@@ -1,8 +1,11 @@
 package Algorithms.Sort;
 
+import java.util.Arrays;
+
 /**
  * 归并排序
- * 优化 1：在「小区间」里转向使用「插入排序」，Java 源码里面也有类似这种操作，「小区间」的长度是个超参数，需要测试决定，这里参考了 JDK 源码；
+ * 优化 1：在「小区间」里转向使用「插入排序」，Java 源码里面也有类似这种操作，「小区间」的长度是个超参数，需要测试决定，
+ *        这里参考了 JDK 源码；
  * 优化 2： 在「两个数组」本身就是有序的情况下，无需合并；
  * 优化 3：全程使用一份临时数组进行「合并两个有序数组」的操作，避免创建临时数组和销毁的消耗，避免计算下标偏移量
  * 时间复杂度：O(NlogN)，这里 N 是数组的长度；
@@ -79,6 +82,7 @@ public class MergeSort {
      * @param temp  全局使用的临时数组
      */
     private void mergeOfTwoSortedArray(int[] nums, int left, int mid, int right, int[] temp) {
+
         System.arraycopy(nums, left, temp, left, right + 1 - left);
 
         int i = left;
@@ -109,10 +113,7 @@ public class MergeSort {
         MergeSort ms = new MergeSort();
         int[] temp = new int[nums.length];
         ms.mergeSort(nums,0,nums.length-1, temp);
-        System.out.println("排序后：");
-        for(int i = 0; i < nums.length; i++) {
-            System.out.print(nums[i] + " ");
-        }
+        System.out.println("排序后：" + Arrays.toString(nums));
     }
 
 }
