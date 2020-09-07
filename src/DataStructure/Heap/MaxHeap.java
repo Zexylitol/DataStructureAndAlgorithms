@@ -5,6 +5,7 @@ import DataStructure.Array.Array;
 import java.util.Random;
 
 /**
+ * 最大堆
  * @author yzze
  * @create 2020-05-05 21:19
  */
@@ -67,16 +68,17 @@ public class MaxHeap<E extends Comparable<E>> {
 
     /**
      * 上浮，用于添加元素
-     * @param k
+     * @param k 需要上浮的元素对应的索引
      */
     private void siftUp(int k) {
-        while(k>0 && data.get(parent(k)).compareTo(data.get(k)) < 0) {
-            data.swap(k, parent(k));
+        while(k>0 && data.get(parent(k)).compareTo(data.get(k)) < 0) {  // 索引未越界且父节点的值小于该节点的值
+            data.swap(k, parent(k));                                    
             k = parent(k);
         }
     }
     /**
      * 向堆中添加元素
+	 * O(logn)
      * @param e
      */
     public void add(E e) {
@@ -97,23 +99,24 @@ public class MaxHeap<E extends Comparable<E>> {
 
     /**
      * 取出堆中的最大元素
+	 * O(logn)
      * @return
      */
     public E extractMax() {
         E ret = findMax();
 
-        data.swap(0, data.getSize()-1);
-        data.removeLast();
+        data.swap(0, data.getSize()-1);    // 将数组末尾元素放置堆顶
+        data.removeLast();                 // 删除末尾元素
         siftDown(0);
         return ret;
     }
 
     /**
      * 下沉，用于取出最大元素
-     * @param k
+     * @param k 需要下沉元素的索引
      */
     private void siftDown(int k) {
-        while(leftChild(k) < data.getSize()) {
+        while(leftChild(k) < data.getSize()) {  
             int j = leftChild(k);
             // 存在右孩子节点且右孩子节点值大于左孩子节点值
             if (j+1 < data.getSize() &&
