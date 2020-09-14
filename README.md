@@ -1,18 +1,22 @@
 # DataStructureAndAlgorithms
 
-## 内容
+## Context
 基于Java的数据结构和算法
 
-动态数组、稀疏数组、链表、队列、栈
+**数据结构**
+- 动态数组、稀疏数组
+- 链表
+- 队列
+- 栈
+- 二叉树、平衡二叉树、红黑树、并查集、Trie、线段树、最大堆
+- 哈希表、集合
 
-二叉树、平衡二叉树、红黑树、并查集、Trie、线段树、最大堆
-
-哈希表、集合
-
-无向图、深度优先遍历、广度优先遍历
+**算法**
+- 排序
+- 无向图 深度优先遍历、求连通分量
 
 
-## 目录
+## Table of Contents
 ````
 .
 |-- DataStructureAndAlgorithm.iml
@@ -21,15 +25,29 @@
     |-- Algorithms
     |   |-- BinarySearch
     |   |   `-- BinarySearch.java
-    |   |-- Graph
-    |   |   |-- BreadthFirstPaths.java
-    |   |   `-- DepthFirstPaths.java
-    |   `-- Sort
-    |       |-- BubbleSort.java
-    |       |-- HeapSort.java
-    |       |-- MergeSort.java
-    |       |-- QuickSort.java
-    |       `-- SelectSort.java
+    |   |-- BinaryTree
+    |   |   `-- DFS.java
+    |   |-- KMP
+    |   |   `-- KMPAlgorithm.java
+    |   |-- NewGraph
+    |   |   |-- DirectedGraph
+    |   |   `-- UndirGraph
+    |   |       |-- CC.java
+    |   |       `-- DFS.java
+    |   |-- Recursion
+    |   |   `-- nQueens.java
+    |   |-- Sort
+    |   |   |-- BubbleSort.java
+    |   |   |-- HeapSort.java
+    |   |   |-- MergeSort.java
+    |   |   |-- QuickSort.java
+    |   |   |-- RadixSort.java
+    |   |   |-- SelectSort.java
+    |   |   |-- ShellSort.java
+    |   |   `-- insertSort.java
+    |   `-- Stack
+    |       |-- PolandNotation.java
+    |       `-- toSufixExpression.java
     |-- DataStructure
     |   |-- Array
     |   |   |-- Array.java
@@ -45,11 +63,6 @@
     |   |   |-- DepthFirstSearch.java
     |   |   |-- RedBlackNode.java
     |   |   `-- RedBlackTree.java
-    |   |-- Graph
-    |   |   |-- DirectedGraph
-    |   |   `-- UndirectedGraph
-    |   |       |-- AdjListUndirGraph.java
-    |   |       `-- DepthFirstSearch.java
     |   |-- HashTable
     |   |   |-- HashCode.java
     |   |   |-- HashTable.java
@@ -80,6 +93,14 @@
     |   |       |-- BSTSet.java
     |   |       |-- LinkedListSet.java
     |   |       `-- Set.java
+    |   |-- NewGraph
+    |   |   |-- DirectedGraph
+    |   |   |-- UndirGraph
+    |   |   |   |-- AdjList.java
+    |   |   |   |-- AdjMatrix.java
+    |   |   |   |-- AdjSet.java
+    |   |   |   `-- Graph.java
+    |   |   `-- g.txt
     |   |-- Queue
     |   |   |-- ArrayLoopQueue.java
     |   |   |-- ArrayQueue.java
@@ -115,10 +136,10 @@
     |   `-- Vector
     |       `-- VectorDemo.java
     |-- LeetCode
+    |   |-- DynamicProgramming.md
     |   |-- LeetCode673.java
     |   |-- LeetCode9.java
     |   `-- LeetCode990.java
-    |-- TestUML.puml
-    `-- test
-        `-- test1.java
+    `-- TestUML.puml
 
+```
