@@ -5,6 +5,8 @@ package DataStructure.NewGraph.UndirGraph;
  * @create 2020-09-13 15:47
  */
 public interface Graph {
+    // 判断输入顶点v的合法性[0,V-1]
+    public void validateVertex(int v);
     // 顶点数
     public int V();
     // 边数
