@@ -1,4 +1,4 @@
-package Algorithms.NewGraph.UndirGraph;
+package Algorithms.NewGraph.UndirGraph.DFS;
 
 import DataStructure.NewGraph.UndirGraph.AdjSet;
 import DataStructure.NewGraph.UndirGraph.Graph;
