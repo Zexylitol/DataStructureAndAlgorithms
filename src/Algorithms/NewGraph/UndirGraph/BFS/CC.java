@@ -1,16 +1,20 @@
-package Algorithms.NewGraph.UndirGraph.DFS;
+package Algorithms.NewGraph.UndirGraph.BFS;
 
 import DataStructure.NewGraph.UndirGraph.AdjSet;
 import DataStructure.NewGraph.UndirGraph.Graph;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
+
 /**
- * 无向图的连通分量(Connected Component)个数
+ * 利用BFS求无向图的连通分量(Connected Component)个数
  **/
 public class CC {
 
     private Graph G;
-    private int[] visited;       // 对于不同的非负量，可以表示不同的连通分量
+    private int[] visited;
     private int cccount = 0;
 
     public CC(Graph G){
@@ -22,30 +26,37 @@ public class CC {
 
         for(int v = 0; v < G.V(); v ++)
             if(visited[v] == -1){
-                dfs(v, cccount);
+                bfs(v, cccount);
                 cccount ++;
             }
     }
 
-    private void dfs(int v, int ccid){
+    private void bfs(int s, int ccid){
 
-        visited[v] = ccid;
-        for(int w: G.adj(v))
-            if(visited[w] == -1)
-                dfs(w, ccid);
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(s);
+        visited[s] = ccid;
+        while(!queue.isEmpty()){
+            int v = queue.remove();
+
+            for(int w: G.adj(v))
+                if(visited[w] == -1){
+                    queue.add(w);
+                    visited[w] = ccid;
+                }
+        }
     }
 
     public int count(){
         return cccount;
     }
 
-	// 判断顶点v和w是否连通
     public boolean isConnected(int v, int w){
         G.validateVertex(v);
         G.validateVertex(w);
         return visited[v] == visited[w];
     }
-	// 返回不同连通分量中的顶点
+
     public ArrayList<Integer>[] components(){
 
         ArrayList<Integer>[] res = new ArrayList[cccount];
