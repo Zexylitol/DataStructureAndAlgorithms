@@ -63,6 +63,14 @@ public class AdjMatrix implements Graph {
         return E;
     }
 
+    public void removeEdge(int v, int w) {
+        validateVertex(v);
+        validateVertex(w);
+
+        adj[v][w] = 0;
+        adj[w][v] = 0;
+    }
+
     public boolean hasEdge(int v, int w){
         validateVertex(v);
         validateVertex(w);

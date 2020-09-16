@@ -65,6 +65,14 @@ public class AdjList implements Graph{
         return E;
     }
 
+    public void removeEdge(int v, int w) {
+        validateVertex(v);
+        validateVertex(w);
+
+        adj[v].remove(w);
+        adj[w].remove(v);
+    }
+
     public boolean hasEdge(int v, int w){
         validateVertex(v);
         validateVertex(w);

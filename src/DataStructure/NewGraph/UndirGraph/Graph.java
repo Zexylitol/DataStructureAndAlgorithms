@@ -11,6 +11,8 @@ public interface Graph {
     public int V();
     // 边数
     public int E();
+    // 删除顶点v和w之间的边
+    public void removeEdge(int v, int w);
     // 顶点v和w之间是否存在边
     public boolean hasEdge(int v, int w);
     // 返回和v相邻的顶点
