@@ -58,7 +58,7 @@ public class DFS {
     }
 
     public static void main(String[] args){
-        String filePath = "E:\\Java\\javaWorkSpace\\DataStructure\\src\\DataStructure\\NewGraph\\g.txt";
+        String filePath = "E:\\Java\\javaWorkSpace\\DataStructure\\src\\Algorithms\\NewGraph\\g.txt";
         Graph g1 = new AdjSet(filePath);
         DFS DFS1 = new DFS(g1);
         System.out.println("DFS preOrder : " + DFS1.pre());
