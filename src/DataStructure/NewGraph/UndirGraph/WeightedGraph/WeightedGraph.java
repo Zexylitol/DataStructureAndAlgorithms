@@ -1,4 +1,4 @@
-package DataStructure.NewGraph.UndirGraph;
+package DataStructure.NewGraph.UndirGraph.WeightedGraph;
 
 import java.io.File;
 import java.io.IOException;
@@ -7,7 +7,7 @@ import java.util.TreeMap;
 import java.util.Scanner;
 
 
-/// 无向带权图
+// 无向带权图
 public class WeightedGraph implements Cloneable{
 
     private int V;

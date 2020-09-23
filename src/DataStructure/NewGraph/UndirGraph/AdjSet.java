@@ -13,7 +13,7 @@ import java.util.Scanner;
  *				查看两点是否相邻：O(log(V))
  *				求一个点的相邻节点：O(degree(v))      
 **/
-public class AdjSet implements Graph{
+public class AdjSet implements Graph {
 
     private int V;
     private int E;
