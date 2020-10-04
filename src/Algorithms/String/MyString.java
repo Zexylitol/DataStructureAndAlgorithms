@@ -25,14 +25,24 @@ public class MyString {
 
         // 将字符串间多余的空白字符去除
         StringBuilder sb = new StringBuilder();
+//        while (left <= right) {
+//            char c = s.charAt(left);
+//            if (c != ' ') {
+//                sb.append(c);
+//            } else if (sb.charAt(sb.length() - 1) != ' ') {
+//                sb.append(c);                     // 空格
+//            }
+//            left++;
+//        }
+        // 另一种去除字符间多余的空白字符方式
         while (left <= right) {
-            char c = s.charAt(left);
+            char c = s.charAt(left++);
             if (c != ' ') {
                 sb.append(c);
-            } else if (sb.charAt(sb.length() - 1) != ' ') {
-                sb.append(c);                     // 空格
+            } else {
+                sb.append(' ');
+                while (left <= right && s.charAt(left) == ' ') left++;
             }
-            left++;
         }
         return sb;
     }
