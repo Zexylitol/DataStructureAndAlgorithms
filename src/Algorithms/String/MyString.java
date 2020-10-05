@@ -83,6 +83,40 @@ public class MyString {
         }
     }
 
+    /**
+     * 最长回文串
+     * @param s
+     * @return
+     */
+    String longestPalindrome(String s) {
+        int len = 0;
+        String ans = new String();
+        for (int k = 0; k < s.length(); k++) {
+            // 回文串长度为偶数
+            int i = k, j = k + 1;
+            while (i >= 0 && j < s.length() && s.charAt(i) == s.charAt(j)) {
+                i--;
+                j++;
+            }
+            if (j - i - 1 > len) {
+                len = j - i - 1;
+                ans = s.substring(i + 1, i + 1 + len);
+            }
+            // 回文串长度为奇数
+            i = k - 1;
+            j = k + 1;
+            while (i >= 0 && j < s.length() && s.charAt(i) == s.charAt(j)) {
+                i--;
+                j++;
+            }
+            if (j - i - 1 > len) {
+                len = j - i - 1;
+                ans = s.substring(i + 1, i + 1 + len);
+            }
+        }
+        return ans;
+    }
+
     public static void main(String[] args) {
         // 翻转字符串里的单词
         String s = "  Bob    Loves Alice  ";
@@ -104,5 +138,7 @@ public class MyString {
         // 翻转每个单词
         myString.reverseEachWord(sb);
         System.out.println(sb.toString());
+
+        System.out.println(myString.longestPalindrome("cbbd"));
     }
 }
