@@ -116,6 +116,16 @@ public class MyString {
         }
         return ans;
     }
+	
+	//  判断一个字符串是否是回文字符串
+    public boolean isPalindrome(String w) {
+        int i = 0, j = w.length()-1;
+        while (i < j) {
+            if (w.charAt(i) != w.charAt(j)) return false;
+            i++; j--;
+        }
+        return true;
+    }
 
     public static void main(String[] args) {
         // 翻转字符串里的单词
