@@ -14,7 +14,7 @@
 **算法**
 - 排序
 - 字符串
-  - KMP算法
+  - [KMP算法](https://github.com/Zexylitol/DataStructureAndAlgorithms/blob/master/src/Algorithms/KMP/KMP.java)
   - 常用方法
     - 最长回文串
     - 翻转区间
